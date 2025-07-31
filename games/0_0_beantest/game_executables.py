@@ -1,5 +1,5 @@
 from game_calculations import GameCalculations
-from src.calculations.beansglory import Ways
+from src.calculations.ways import Ways
 
 
 class GameExecutables(GameCalculations):
