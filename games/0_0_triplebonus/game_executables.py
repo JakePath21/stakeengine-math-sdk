@@ -51,6 +51,13 @@ class GameExecutables(GameCalculations):
         else:
             return  # no bonus triggered
 
+        # Record scatter symbols for optimization program (CRITICAL for force data)
+        self.record({
+            "kind": regular_count,
+            "symbol": "scatter",
+            "gametype": self.gametype,
+        })
+
         # Initialize free spins
         self.tot_fs       = spins
         self.remaining_fs = spins

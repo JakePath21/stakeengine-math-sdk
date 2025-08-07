@@ -25,12 +25,12 @@ if __name__ == "__main__":
     }
 
     run_conditions = {
-        "run_sims": True,
+        "run_sims": False,  # Regenerate with scatter records
         "run_optimization": True,
-        "run_analysis": True,
-        "run_format_checks": True,
+        "run_analysis": False,
+        "run_format_checks": False,  
     }
-    target_modes = ["base", "buy_regular_bonus", "buy_super_bonus", "buy_mega_bonus", "buy_mystery_bonus"]
+    target_modes = ["base", "buy_regular_bonus", "buy_super_bonus", "buy_mega_bonus", "buy_mystery_bonus"]  # Test just base mode first
 
     config = GameConfig()
     gamestate = GameState(config)

@@ -21,7 +21,7 @@ class OptimizationSetup:
                 "conditions": {
                     "wincap": ConstructConditions(
                         rtp=0.01,
-                        av_win=10000,               # max wincap is 10,000×
+                        av_win=10000,
                         search_conditions=10000
                     ).return_dict(),
                     "0": ConstructConditions(
@@ -41,8 +41,8 @@ class OptimizationSetup:
                 },
                 "scaling": ConstructScaling(
                     [
-                        {"criteria": "basegame", "scale_factor": 1.2, "win_range": (1, 2),    "probability": 1.0},
-                        {"criteria": "basegame", "scale_factor": 1.5, "win_range": (10, 20),  "probability": 1.0},
+                        {"criteria": "basegame", "scale_factor": 1.2, "win_range": (1, 2),     "probability": 1.0},
+                        {"criteria": "basegame", "scale_factor": 1.5, "win_range": (10, 20),   "probability": 1.0},
                         {"criteria": "freegame", "scale_factor": 0.8, "win_range": (1000, 2000),"probability": 1.0},
                         {"criteria": "freegame", "scale_factor": 1.2, "win_range": (3000, 4000),"probability": 1.0},
                     ]

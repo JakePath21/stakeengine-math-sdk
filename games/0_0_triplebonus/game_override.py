@@ -25,3 +25,9 @@ class GameStateOverride(GameExecutables):
             win_criteria = self.get_current_betmode_distributions().get_win_criteria()
             if win_criteria is not None and self.final_win != win_criteria:
                 self.repeat = True
+
+            if self.get_current_distribution_conditions()["force_freegame"] and not (self.triggered_freegame):
+                self.repeat = True
+
+            if self.win_manager.running_bet_win == 0 and self.criteria != "0":
+                self.repeat = True
