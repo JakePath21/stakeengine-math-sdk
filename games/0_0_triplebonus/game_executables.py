@@ -7,7 +7,14 @@ class GameExecutables(GameCalculations):
 
     def evaluate_ways_board(self):
         """Populate win-data, record wins, transmit events."""
-        self.win_data = Ways.get_ways_data(self.config, self.board)
+        # Use the global multiplier if it exists, otherwise default to 1.0
+        global_mult = getattr(self, 'global_multiplier', 1.0)
+        self.win_data = Ways.get_ways_data(
+            self.config, 
+            self.board, 
+            multiplier_strategy="global",
+            global_multiplier=global_mult
+        )
         if self.win_data["totalWin"] > 0:
             Ways.record_ways_wins(self)
             self.win_manager.update_spinwin(self.win_data["totalWin"])
@@ -58,6 +65,7 @@ class GameExecutables(GameCalculations):
 
         # Set and emit the global multiplier
         self.global_mult = mult
+        self.global_multiplier = mult  # Ensure compatibility with ways calculation
         update_global_mult_event(self)
 
         # Now actually run the free-spin loop

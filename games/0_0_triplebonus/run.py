@@ -18,6 +18,10 @@ if __name__ == "__main__":
 
     num_sim_args = {
         "base": int(1e4),
+        "buy_regular_bonus": int(1e4),
+        "buy_super_bonus": int(1e4),
+        "buy_mega_bonus": int(1e4),
+        "buy_mystery_bonus": int(1e4),
     }
 
     run_conditions = {
@@ -26,7 +30,7 @@ if __name__ == "__main__":
         "run_analysis": True,
         "run_format_checks": True,
     }
-    target_modes = ["base"]
+    target_modes = ["base", "buy_regular_bonus", "buy_super_bonus", "buy_mega_bonus", "buy_mystery_bonus"]
 
     config = GameConfig()
     gamestate = GameState(config)

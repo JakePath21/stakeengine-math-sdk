@@ -21,8 +21,18 @@ class Ways:
         wild_key: str = "wild",
         multiplier_key="multiplier",
         multiplier_strategy="symbol",
+        global_multiplier: float = 1.0,
     ):
-        """Ways calculation with possibility for global multiplier application."""
+        """Ways calculation with possibility for global multiplier application.
+        
+        Args:
+            config: Game configuration
+            board: Game board with symbols
+            wild_key: Key for wild symbols in config
+            multiplier_key: Attribute name for symbol multipliers
+            multiplier_strategy: Either "symbol" or "global" multiplier application
+            global_multiplier: External global multiplier (e.g., from bonus rounds)
+        """
         return_data = {
             "totalWin": 0,
             "wins": [],
@@ -107,11 +117,17 @@ class Ways:
                     positions += wilds[r]
 
                 base_win = round(config.paytable[kind, symbol] * ways, 2)
+                
+                # Calculate the total global multiplier combining external and symbol-based multipliers
+                total_global_mult = global_multiplier
+                if multiplier_strategy == "global":
+                    total_global_mult *= (1 + global_mult_count)
+                
                 win_amt, multiplier = apply_mult(
                     board=board,
                     strategy="global",
                     win_amount=base_win,
-                    global_multiplier=(global_mult_count if multiplier_strategy == "global" else 1),
+                    global_multiplier=total_global_mult,
                 )
 
                 return_data["wins"].append({

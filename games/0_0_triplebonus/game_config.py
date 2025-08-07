@@ -167,6 +167,7 @@ class GameConfig(Config):
                             },
                             "force_freegame": True,
                             "force_wincap": False,
+                            "scatter_triggers": {3: 100},  # Fallback, shouldn't be used
                             "mult_values": {1: 1},
                         },
                     ),
@@ -193,6 +194,7 @@ class GameConfig(Config):
                             },
                             "force_freegame": True,
                             "force_wincap": False,
+                            "scatter_triggers": {3: 100},  # Fallback, shouldn't be used
                             "mult_values": {1: 1},
                         },
                     ),
@@ -219,6 +221,7 @@ class GameConfig(Config):
                             },
                             "force_freegame": True,
                             "force_wincap": False,
+                            "scatter_triggers": {3: 100},  # Fallback, shouldn't be used
                             "mult_values": {1: 1},
                         },
                     ),
@@ -245,6 +248,7 @@ class GameConfig(Config):
                             },
                             "force_freegame": True,
                             "force_wincap": False,
+                            "scatter_triggers": {3: 100},  # Fallback, shouldn't be used
                             "mult_values": {1: 1},
                         },
                     ),
@@ -258,6 +262,7 @@ class GameConfig(Config):
                             },
                             "force_freegame": True,
                             "force_wincap": False,
+                            "scatter_triggers": {3: 100},  # Fallback, shouldn't be used
                             "mult_values": {1: 1},
                         },
                     ),
@@ -271,6 +276,7 @@ class GameConfig(Config):
                             },
                             "force_freegame": True,
                             "force_wincap": False,
+                            "scatter_triggers": {3: 100},  # Fallback, shouldn't be used
                             "mult_values": {1: 1},
                         },
                     ),
